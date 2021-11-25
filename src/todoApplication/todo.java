@@ -1,6 +1,13 @@
 package todoApplication;
 
-public class App {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+public class todo {
 
   public static void main(String[] args) {
 
@@ -37,6 +44,26 @@ public class App {
   }
 
   private static void listAllTodo() {
+    System.out.println("TODOS:\n");
+    Path filePath = Paths.get("todoList.txt");
+    List<String> fileContent = new ArrayList<>();
+    try {
+      fileContent = Files.readAllLines(filePath);
+    } catch (IOException e) {
+      printNoTodo();
+    }
+    int todoCount = fileContent.size();
+    if (todoCount == 0) {
+      printNoTodo();
+      return;
+    }
+    for (int i = 0; i < todoCount; i++) {
+      System.out.printf("%d - %s", i + 1, fileContent.get(i));
+    }
+  }
+
+  private static void printNoTodo() {
+    System.out.println("No todos for today! :)");
   }
 
   private static void printUsageInfo() {
