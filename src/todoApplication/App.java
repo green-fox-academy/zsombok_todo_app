@@ -17,7 +17,7 @@ public class App {
       case "-l":
         listAllTodo();
       case "-a":
-        addTodo();
+        addTodo(args[1]);
       case "-r":
         removeTodo(args[1]);
       case "-c":
@@ -33,7 +33,7 @@ public class App {
   private static void removeTodo(String arg) {
   }
 
-  private static void addTodo() {
+  private static void addTodo(String desctiption) {
   }
 
   private static void listAllTodo() {
