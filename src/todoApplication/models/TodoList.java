@@ -55,8 +55,8 @@ public class TodoList {
     System.out.println("Command line arguments:");
     System.out.println("\t-l\t\tlists all todos");
     System.out.println("\t-a \"My todo\"\tadds a todo with description 'My todo'");
-    System.out.println("\t-r nth\t\tremoves the nth todo");
-    System.out.println("\t-t nth\t\ttoggles the status of the nth todo");
+    System.out.println("\t-r n\t\tremoves the nth todo");
+    System.out.println("\t-t n\t\ttoggles the status of the nth todo");
   }
 
   private void fetchTodos() {
